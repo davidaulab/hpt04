@@ -18,8 +18,6 @@ Multilínea
  Asignación (variables)
  Condicionales (if / case)
  Bucles (for / while)
-
- Reutilización de código
  */
 
  // Const 
@@ -107,7 +105,7 @@ var_dump( $miArray);
 $clase = [];
 $clase[] = array (
     "nombre" => "Eduardo",
-    "nota" => 8
+    "nota" => 4
 );
 
 $clase[] = array (
@@ -127,7 +125,7 @@ $clase[] = array (
 var_dump($clase);
 
 echo "con FOR \n\n";
-
+$i = 8;
 for ($i = 0; $i < sizeof($clase); $i++) {
     //var_dump ($clase[$i]);
     echo "============== Nombre del alumno: " . $clase[$i]['nombre'] . "\n";
@@ -136,5 +134,74 @@ for ($i = 0; $i < sizeof($clase); $i++) {
         echo "$clave : $valor \n";
     }
 }
+//$i = 8
+$i = 0;
+$bEnd = true;
+
+echo "============== EMPIEZO CON EL WHILE\n";
+   
+while (($i < sizeof($clase)) &&   ($bEnd == true)){
+
+    echo "============== Nombre del alumno: " . $clase[$i]['nombre'] . "\n";
+    foreach ($clase[$i] as $clave => $valor) {
+        echo "$clave : $valor \n";
+    }
+
+    if ($clase[$i]['nota'] <= 3) {
+        $bEnd = false;
+    }
+
+
+    $i++;
+}
+
+$i = -1;
+do {
+    $i++;
+
+    echo "============== Nombre del alumno: " . $clase[$i]['nombre'] . "\n";
+    foreach ($clase[$i] as $clave => $valor) {
+        echo "$clave : $valor \n";
+    }
+
+} while (($i < sizeof($clase)) &&  ($clase[$i]['nota'] <= 3));
+
+
+for ($i = 0; $i < 12; $i++) {
+
+    echo "    "  . $i; 
+
+    if (($i % 3) == 2) {
+        echo "\n";
+    }
+} 
+
+
+echo "\n\n";
+echo  '\n$i\n';
+
+echo  "\n$i\n";
+if (1 == 1) {
+    echo "\nSon iguales";
+} 
+if ("1" == 1) {
+    echo "\nSon iguales";
+} 
+if (true == 1) {
+    echo "\nSon iguales";
+} 
+
+if (1 !== 1) {
+    echo "\nSon idénticos";
+} 
+if ("1" !== 1) {
+    echo "\nSon idénticos";
+} 
+if (true !== 1) {
+    echo "\nSon idénticos";
+}
+
+
+
 ?>
 
